@@ -13,6 +13,66 @@
     <title>my crochet project manager</title>
   </head>
   <body style="font-family: 'Inter', sans-serif">
-    <h1>my crochet project manager</h1>
+    <p class="title">my crochet project manager</p>
+    <main class="main-module">
+      <nav>
+        <ul>
+          <li>My Projects</li>
+          <li>Stitch Counter</li>
+          <li>About</li>
+        </ul>
+        <div class="crochet-content">
+          <div class="project-container">
+            <img src="images/yarn-ball.png" class="project-image" />
+            <p class="project-name">Bear keychain</p>
+            <p class="project-status">Planned</p>
+            <p class="project-due-date">Due: 29/05/2025</p>
+            <p class="project-notes">
+              Notes: I want to add a little bow on its head
+            </p>
+          </div>
+          <aside>
+            <button class="add-project-button">+ Add Project</button>
+            <p>Filter projects:</p>
+            <button>Planned</button>
+            <button>Ongoing</button>
+          </aside>
+        </div>
+        <form>
+          <h1>Add Project</h1>
+          <label for="project-name-input">Name: </label>
+          <input
+            type="text"
+            id="project-name-input"
+            name="project-name"
+            required
+            minlength="5"
+            maxlength="30"
+          />
+          <label for="project-status-input">Status:</label>
+          <select id="project-status-input" name="project-status" required>
+            <option value="planned">Planned</option>
+            <option value="ongoing">Ongoing</option>
+          </select>
+          <label for="project-due-date-input">Due date:</label>
+          <input
+            type="date"
+            id="project-due-date-input"
+            name="project-due-date"
+            required
+          />
+          <label for="project-notes-input">Notes:</label>
+          <input
+            type="text"
+            id="project-notes-input"
+            name="project-notes"
+            maxlength="150"
+          />
+          <button type="submit">+ Add Project</button>
+        </form>
+      </nav>
+    </main>
+    <p class="date">today is</p>
+    <script src="index.js"></script>
   </body>
 </html>
