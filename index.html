@@ -17,60 +17,73 @@
     <main class="main-module">
       <nav>
         <ul>
-          <li>My Projects</li>
-          <li>Stitch Counter</li>
-          <li>About</li>
+          <li>(2) My Projects</li>
+          <li class="isNotSelected">Stitch Counter</li>
+          <li class="isNotSelected">About</li>
         </ul>
-        <div class="crochet-content">
-          <div class="project-container">
-            <img src="images/yarn-ball.png" class="project-image" />
-            <p class="project-name">Bear keychain</p>
-            <p class="project-status">Planned</p>
-            <p class="project-due-date">Due: 29/05/2025</p>
-            <p class="project-notes">
-              Notes: I want to add a little bow on its head
-            </p>
-          </div>
-          <aside>
-            <button class="add-project-button">+ Add Project</button>
-            <p>Filter projects:</p>
-            <button>Planned</button>
-            <button>Ongoing</button>
-          </aside>
-        </div>
-        <form>
-          <h1>Add Project</h1>
-          <label for="project-name-input">Name: </label>
-          <input
-            type="text"
-            id="project-name-input"
-            name="project-name"
-            required
-            minlength="5"
-            maxlength="30"
-          />
-          <label for="project-status-input">Status:</label>
-          <select id="project-status-input" name="project-status" required>
-            <option value="planned">Planned</option>
-            <option value="ongoing">Ongoing</option>
-          </select>
-          <label for="project-due-date-input">Due date:</label>
-          <input
-            type="date"
-            id="project-due-date-input"
-            name="project-due-date"
-            required
-          />
-          <label for="project-notes-input">Notes:</label>
-          <input
-            type="text"
-            id="project-notes-input"
-            name="project-notes"
-            maxlength="150"
-          />
-          <button type="submit">+ Add Project</button>
-        </form>
       </nav>
+      <div class="section-container">
+        <div class="project-container">
+          <div class="project-content">
+            <div class="proj-img-and-details">
+              <div class="project-image">
+                <img src="images/yarn-ball.png" class="project-image" />
+              </div>
+              <div class="project-details">
+                <p class="project-name">Bear keychain</p>
+                <p class="project-status"><span>⚫</span>Planned</p>
+                <p class="project-due-date">Due: 29/05/2025</p>
+              </div>
+            </div>
+            <div class="project-buttons">
+              <div><p></p></div>
+              <div><p></p></div>
+            </div>
+          </div>
+          <p class="project-notes">
+            Notes: I want to add a little bow on its head
+          </p>
+          <div class="bottom-border"></div>
+        </div>
+        <aside>
+          <button class="add-project-button">+ Add Project</button>
+          <p>Filter projects:</p>
+          <button>Planned</button>
+          <button>Ongoing</button>
+        </aside>
+      </div>
+      <form class="hide">
+        <h1>Add Project</h1>
+        <label for="project-name-input">Name: </label>
+        <input
+          type="text"
+          id="project-name-input"
+          name="project-name"
+          required
+          minlength="5"
+          maxlength="30"
+        />
+        <label for="project-status-input">Status:</label>
+        <select id="project-status-input" name="project-status" required>
+          <option value="planned">Planned</option>
+          <option value="ongoing">Ongoing</option>
+        </select>
+        <label for="project-due-date-input">Due date:</label>
+        <input
+          type="date"
+          id="project-due-date-input"
+          name="project-due-date"
+          required
+        />
+        <label for="project-notes-input">Notes:</label>
+        <input
+          type="text"
+          id="project-notes-input"
+          name="project-notes"
+          maxlength="150"
+        />
+        <button type="submit">+ Add Project</button>
+      </form>
     </main>
     <p class="date">today is</p>
     <script src="index.js"></script>

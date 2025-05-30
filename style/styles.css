@@ -1,15 +1,138 @@
-.body {
+* {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
+  padding: 0;
+  margin: 0;
 }
 
-.title {
-    font-size: 25px;
-    font-weight: bold;
-    text-align: center;
+.title,
+.date {
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 600;
+  text-align: center;
+  margin: 30px 0;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.main-module {
+  border: 2px solid black;
+  border-radius: 12px;
+  width: 800px;
+  background-color: #f6f6f7;
+}
+
+nav {
+  border: none;
+  border-radius: 12px 12px 0 0;
+  margin-bottom: 30px;
+  background-color: #d9d9d9;
+}
+
+ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 12px 12px 0 0;
+}
+
+li {
+  flex: 1;
+  text-align: center;
+  cursor: pointer;
+  padding: 20px 0;
+  border-style: none;
+  font-size: 20px;
+}
+
+.isNotSelected {
+  border-bottom: 2px solid black;
+  border-left: 2px solid black;
+}
+
+.section-container {
+  display: flex;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  padding-right: 20px;
+  padding-top: 20px;
+  justify-content: space-between;
+}
+
+.project-container {
+  border: 2px solid black;
+  border-radius: 12px;
+}
+
+.project-content {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  padding-top: 25px;
+  padding-bottom: 0;
+  padding-right: 15px;
+  padding-left: 20px;
+  column-gap: 50px;
+}
+
+.proj-img-and-details {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.project-details > p {
+  margin-bottom: 5px;
+}
+
+.project-buttons > div {
+  display: block;
+  font-size: 15px;
+  border-radius: 50px;
+  background-color: #d9d9d9;
+  text-align: center;
+  border: 1px solid black;
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  border-radius: 100px;
+  margin-bottom: 10px;
+  justify-self: end;
+}
+
+.project-name {
+  font-size: 25px;
+  font-weight: 550;
+}
+
+.project-status {
+  font-size: 18px;
+  color: #626162;
 }
 
 img {
-    width: 80px;
+  width: 80px;
+}
+
+.bottom-border {
+  background-color: #d9d9d9;
+  border-radius: 0 0 12px 12px;
+  margin: 0;
+  padding: 7px;
+}
+
+.hide {
+  display: none;
+}
+
+.project-notes {
+  padding: 20px;
 }
