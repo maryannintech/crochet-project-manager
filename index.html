@@ -23,33 +23,59 @@
         </ul>
       </nav>
       <div class="section-container">
-        <div class="project-container">
-          <div class="project-content">
-            <div class="proj-img-and-details">
-              <div class="project-image">
-                <img src="images/yarn-ball.png" class="project-image" />
+        <div>
+          <div class="project-container">
+            <div class="project-content">
+              <div class="proj-img-and-details">
+                <div class="project-image">
+                  <img src="images/yarn-ball.png" class="project-image" />
+                </div>
+                <div class="project-details">
+                  <p class="project-name">Bear keychain</p>
+                  <p class="project-status"><span>⚫</span>Planned</p>
+                  <p class="project-due-date">Due: 29/05/2025</p>
+                </div>
               </div>
-              <div class="project-details">
-                <p class="project-name">Bear keychain</p>
-                <p class="project-status"><span>⚫</span>Planned</p>
-                <p class="project-due-date">Due: 29/05/2025</p>
+              <div class="project-buttons">
+                <div><p></p></div>
+                <div><p></p></div>
               </div>
             </div>
-            <div class="project-buttons">
-              <div><p></p></div>
-              <div><p></p></div>
-            </div>
+            <p class="project-notes">
+              Notes: I want to add a little bow on its head
+            </p>
+            <div class="bottom-border"></div>
           </div>
-          <p class="project-notes">
-            Notes: I want to add a little bow on its head
-          </p>
-          <div class="bottom-border"></div>
+          <div class="project-container">
+            <div class="project-content">
+              <div class="proj-img-and-details">
+                <div class="project-image">
+                  <img src="images/yarn-ball.png" class="project-image" />
+                </div>
+                <div class="project-details">
+                  <p class="project-name">Bear keychain</p>
+                  <p class="project-status"><span>⚫</span>Planned</p>
+                  <p class="project-due-date">Due: 29/05/2025</p>
+                </div>
+              </div>
+              <div class="project-buttons">
+                <div><p></p></div>
+                <div><p></p></div>
+              </div>
+            </div>
+            <p class="project-notes">
+              Notes: I want to add a little bow on its head
+            </p>
+            <div class="bottom-border"></div>
+          </div>
         </div>
         <aside>
           <button class="add-project-button">+ Add Project</button>
-          <p>Filter projects:</p>
-          <button>Planned</button>
-          <button>Ongoing</button>
+          <div class="filter-buttons">
+            <p>Filter projects:</p>
+            <button>Planned</button>
+            <button>Ongoing</button>
+          </div>
         </aside>
       </div>
       <form class="hide">
@@ -82,10 +108,11 @@
           name="project-notes"
           maxlength="150"
         />
-        <button type="submit">+ Add Project</button>
+        <button type="submit" class="add-project-btn">+ Add Project</button>
       </form>
+      <div class="bottom-design"></div>
     </main>
     <p class="date">today is</p>
-    <script src="index.js"></script>
+    <script type="module" src="index.js"></script>
   </body>
 </html>

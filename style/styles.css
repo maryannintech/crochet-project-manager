@@ -8,7 +8,7 @@
 
 .title,
 .date {
-  font-size: 20px;
+  font-size: 24px;
   font-style: italic;
   font-weight: 600;
   text-align: center;
@@ -22,7 +22,7 @@ ul {
 }
 
 .main-module {
-  border: 2px solid black;
+  border: 3px solid black;
   border-radius: 12px;
   width: 800px;
   background-color: #f6f6f7;
@@ -51,17 +51,17 @@ li {
   cursor: pointer;
   padding: 20px 0;
   border-style: none;
-  font-size: 20px;
+  font-size: 25px;
 }
 
 .isNotSelected {
-  border-bottom: 2px solid black;
-  border-left: 2px solid black;
+  border-bottom: 3px solid black;
+  border-left: 3px solid black;
 }
 
 .section-container {
   display: flex;
-  padding-bottom: 30px;
+  padding-bottom: 10px;
   padding-left: 30px;
   padding-right: 20px;
   padding-top: 20px;
@@ -69,8 +69,9 @@ li {
 }
 
 .project-container {
-  border: 2px solid black;
+  border: 3px solid black;
   border-radius: 12px;
+  margin-bottom: 20px;
 }
 
 .project-content {
@@ -99,7 +100,7 @@ li {
   border-radius: 50px;
   background-color: #d9d9d9;
   text-align: center;
-  border: 1px solid black;
+  border: 2px solid black;
   width: 30px;
   height: 30px;
   padding: 5px;
@@ -135,4 +136,41 @@ img {
 
 .project-notes {
   padding: 20px;
+}
+
+.add-project-button {
+  font-size: 25px;
+  border: 3px solid black;
+  border-radius: 10px;
+  padding: 5px 25px;
+  margin-bottom: 40px;
+  cursor: pointer;
+}
+
+.bottom-design {
+  background-color: #d9d9d9;
+  padding: 8px;
+  border-radius: 0 0 12px 12px;
+  border-top: 3px solid black;
+}
+
+.filter-buttons > p {
+  font-size: 21px;
+  text-align: center;
+  font-style: italic;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.filter-buttons > button {
+  display: block;
+  font-size: 18px;
+  border: 3px solid black;
+  padding: 5px 0;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  cursor: pointer;
 }
