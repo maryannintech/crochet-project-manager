@@ -78,7 +78,7 @@
           </div>
         </aside>
       </div>
-      <form class="hide">
+      <form>
         <h1>Add Project</h1>
         <label for="project-name-input">Name: </label>
         <input
@@ -88,6 +88,7 @@
           required
           minlength="5"
           maxlength="30"
+          placeholder="Enter project name"
         />
         <label for="project-status-input">Status:</label>
         <select id="project-status-input" name="project-status" required>
@@ -102,12 +103,13 @@
           required
         />
         <label for="project-notes-input">Notes:</label>
-        <input
-          type="text"
+        <textarea
           id="project-notes-input"
           name="project-notes"
           maxlength="150"
-        />
+          placeholder="Enter any notes about the project"
+          class="project-notes-input"
+        ></textarea>
         <button type="submit" class="add-project-btn">+ Add Project</button>
       </form>
       <div class="bottom-design"></div>
