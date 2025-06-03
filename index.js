@@ -1,7 +1,13 @@
 import { projects, addProject, removeProject } from "./data/projects.js";
 import { capitalizeFirstLetter } from "./utils/format-text.js";
+import dayjs from "https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js";
 
 renderProjects();
+const todayElement = document.querySelector(".js-date");
+todayElement.innerHTML = `today is ${dayjs()
+  .format("MMMM D, YYYY")
+  .toLowerCase()}`;
+
 const addProjectForm = document.querySelector(".js-form-add-project");
 document
   .querySelector(".js-add-project-button")
@@ -33,6 +39,7 @@ addProjectForm.addEventListener("submit", (event) => {
 });
 
 function renderProjects() {
+  document.querySelector(".js-project-quantity").innerHTML = `(${projects.length})`
   const noProjectMessage = document.querySelector(".js-starting-message");
   if (projects.length === 0) {
     noProjectMessage.classList.remove("hide");
@@ -73,7 +80,7 @@ function renderProjects() {
               </div>
             </div>
             <p class="project-notes">
-              Notes: ${project.notes ? project.notes : "No notes added."}
+              Notes: ${project.notes ? capitalizeFirstLetter(project.notes) : "No notes added"}
             </p>
             <div class="bottom-border"></div>
           </div>
