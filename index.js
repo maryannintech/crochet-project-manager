@@ -39,7 +39,9 @@ addProjectForm.addEventListener("submit", (event) => {
 });
 
 function renderProjects() {
-  document.querySelector(".js-project-quantity").innerHTML = `(${projects.length})`
+  document.querySelector(
+    ".js-project-quantity"
+  ).innerHTML = `(${projects.length})`;
   const noProjectMessage = document.querySelector(".js-starting-message");
   if (projects.length === 0) {
     noProjectMessage.classList.remove("hide");
@@ -66,12 +68,14 @@ function renderProjects() {
                   )}</p>
                   <p class="project-status"><span class="status-icon ${
                     project.status
-                  }"></span>${capitalizeFirstLetter(project.status)}</p>
+                  }"></span>${capitalizeFirstLetter(project.status)} </p> 
                   <p class="project-due-date">Due: ${project.dueDate}</p>
                 </div>
               </div>
               <div class="project-buttons">
-                <div class="edit-status-btn js-edit-status-btn"><i class='bx  bx-edit-alt'></i> </div>
+                <div class="edit-status-btn js-edit-status-btn" data-project-id="${
+                  project.projectId
+                }"><i class='bx  bx-edit-alt'></i> </div>
                 <div class="delete-project-btn js-delete-project-btn" data-project-id="${
                   project.projectId
                 }">
@@ -80,7 +84,11 @@ function renderProjects() {
               </div>
             </div>
             <p class="project-notes">
-              Notes: ${project.notes ? capitalizeFirstLetter(project.notes) : "No notes added"}
+              Notes: ${
+                project.notes
+                  ? capitalizeFirstLetter(project.notes)
+                  : "No notes added"
+              }
             </p>
             <div class="bottom-border"></div>
           </div>
@@ -95,5 +103,40 @@ function renderProjects() {
       removeProject(projectId);
       renderProjects();
     });
+  });
+
+  document.querySelectorAll(".js-edit-status-btn").forEach((button) => {
+    button.addEventListener("click", () => {
+      const projectId = button.dataset.projectId;
+      console.log(projectId);
+    });
+  });
+
+  document
+    .querySelector(".js-planned-filter-btn")
+    .addEventListener("click", () => {
+      const plannedFilter = [];
+      projects.filter((project) => {
+        if (project.status === "planned") {
+          plannedFilter.push(project);
+        }
+      });
+      console.log(plannedFilter);
+    });
+
+  document
+    .querySelector(".js-ongoing-filter-btn")
+    .addEventListener("click", () => {
+      const ongoingFilter = [];
+      projects.filter((project) => {
+        if (project.status === "ongoing") {
+          ongoingFilter.push(project);
+        }
+      });
+      console.log(ongoingFilter);
+    });
+
+  document.querySelector(".js-all-filter-btn").addEventListener("click", () => {
+    renderProjects();
   });
 }

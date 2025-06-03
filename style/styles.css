@@ -17,15 +17,16 @@ body {
 
 
 .title{
-  font-size: 20px;
+  font-size: 23px;
   font-style: italic;
   font-weight: 600;
   text-align: center;
+  color: black;
 }
 
 .date {
-  margin-bottom: 20px;
-  font-size: 18px;
+  margin-bottom: 23px;
+  font-size: 20px;
   font-weight: 600;
 }
 
@@ -169,6 +170,7 @@ img {
 }
 
 .project-notes {
+  font-size: 18px;
   padding: 20px;
 }
 
