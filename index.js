@@ -63,8 +63,10 @@ function renderProjects() {
                 </div>
               </div>
               <div class="project-buttons">
-                <div><p></p></div>
-                <div><p></p></div>
+                <div class="edit-status-btn js-edit-status-btn"><i class='bx  bx-edit-alt'></i> </div>
+                <div class="delete-project-btn js-delete-project-btn">
+                <i class='bx  bx-trash-x'></i> 
+                </div>
               </div>
             </div>
             <p class="project-notes">
