@@ -1,4 +1,4 @@
-import { projects, removeProject } from "./data/projects.js";
+import { projects, addProject, removeProject } from "./data/projects.js";
 import { capitalizeFirstLetter } from "./utils/format-text.js";
 
 renderProjects();
@@ -26,13 +26,7 @@ addProjectForm.addEventListener("submit", (event) => {
   ).value;
   const projectNotes = document.querySelector(".js-project-notes-input").value;
 
-  projects.push({
-    projectId: crypto.randomUUID(),
-    projectName,
-    status: projectStatus,
-    dueDate: projectDueDate,
-    notes: projectNotes || "",
-  });
+  addProject(projectName, projectStatus, projectDueDate, projectNotes);
 
   addProjectForm.reset();
   renderProjects();
@@ -47,7 +41,7 @@ function renderProjects() {
   } else {
     noProjectMessage.classList.add("hide");
   }
-  
+
   let projectListHTML = "";
 
   projects.forEach((project) => {
@@ -63,9 +57,9 @@ function renderProjects() {
                   <p class="project-name">${capitalizeFirstLetter(
                     project.projectName
                   )}</p>
-                  <p class="project-status"><span class="status-icon"></span>${capitalizeFirstLetter(
+                  <p class="project-status"><span class="status-icon ${
                     project.status
-                  )}</p>
+                  }"></span>${capitalizeFirstLetter(project.status)}</p>
                   <p class="project-due-date">Due: ${project.dueDate}</p>
                 </div>
               </div>

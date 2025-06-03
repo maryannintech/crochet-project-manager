@@ -15,6 +15,17 @@ export function removeProject(projectId) {
   saveToStorage();
 }
 
+export function addProject(projectName, status, dueDate, notes) {
+  projects.push({
+    projectId: crypto.randomUUID(),
+    projectName,
+    status,
+    dueDate,
+    notes: notes || "",
+  });
+  saveToStorage();
+}
+
 function saveToStorage() {
   localStorage.setItem("projects", JSON.stringify(projects));
 }
