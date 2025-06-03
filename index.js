@@ -1,7 +1,5 @@
-import { projects } from "./data/projects.js";
+import { projects, removeProject } from "./data/projects.js";
 import { capitalizeFirstLetter } from "./utils/format-text.js";
-
-console.log(crypto.randomUUID());
 
 renderProjects();
 const addProjectForm = document.querySelector(".js-form-add-project");
@@ -28,8 +26,6 @@ addProjectForm.addEventListener("submit", (event) => {
   ).value;
   const projectNotes = document.querySelector(".js-project-notes-input").value;
 
-  console.log(projectName, projectStatus, projectDueDate, projectNotes);
-
   projects.push({
     projectId: crypto.randomUUID(),
     projectName,
@@ -43,10 +39,21 @@ addProjectForm.addEventListener("submit", (event) => {
 });
 
 function renderProjects() {
+  const noProjectMessage = document.querySelector(".js-starting-message");
+  if (projects.length === 0) {
+    noProjectMessage.classList.remove("hide");
+    document.querySelector(".js-project-list").innerHTML = "";
+    return;
+  } else {
+    noProjectMessage.classList.add("hide");
+  }
+  
   let projectListHTML = "";
 
   projects.forEach((project) => {
-    projectListHTML += `<div class="project-container">
+    projectListHTML += `<div class="project-container" data-project-id="${
+      project.projectId
+    }">
             <div class="project-content">
               <div class="proj-img-and-details">
                 <div class="project-image">
@@ -64,7 +71,9 @@ function renderProjects() {
               </div>
               <div class="project-buttons">
                 <div class="edit-status-btn js-edit-status-btn"><i class='bx  bx-edit-alt'></i> </div>
-                <div class="delete-project-btn js-delete-project-btn">
+                <div class="delete-project-btn js-delete-project-btn" data-project-id="${
+                  project.projectId
+                }">
                 <i class='bx  bx-trash-x'></i> 
                 </div>
               </div>
@@ -77,7 +86,13 @@ function renderProjects() {
 `;
   });
 
-  console.log(projectListHTML);
-
   document.querySelector(".js-project-list").innerHTML = projectListHTML;
+
+  document.querySelectorAll(".js-delete-project-btn").forEach((button) => {
+    button.addEventListener("click", () => {
+      const projectId = button.dataset.projectId;
+      removeProject(projectId);
+      renderProjects();
+    });
+  });
 }

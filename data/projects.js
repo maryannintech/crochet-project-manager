@@ -1,17 +1,20 @@
-export const projects = [{
-    projectId: 1,
-    projectName: "Bear keychain",
-    status: "planned",
-    dueDate: "June 25, 2025",
-    notes: "I want to add a little bow on its head"
-},
-{
-    projectId: 2,
-    projectName: "Summer tote bag",
-    status: "ongoing",
-    dueDate: "July 15, 2025",
-    notes: "Use cotton yarn for sturdy handles"
+export let projects = JSON.parse(localStorage.getItem("projects"));
+
+if (!projects) {
+  projects = [];
 }
-];
 
+export function removeProject(projectId) {
+  const newProjects = [];
+  projects.forEach((project) => {
+    project.projectId !== projectId ? newProjects.push(project) : null;
+  });
 
+  projects = newProjects;
+  console.log(projects);
+  saveToStorage();
+}
+
+function saveToStorage() {
+  localStorage.setItem("projects", JSON.stringify(projects));
+}

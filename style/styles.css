@@ -38,9 +38,9 @@ ul {
   border-radius: 12px;
   width: 780px;
   background-color: #f6f6f7;
-  height: 600px;
-  scrollbar-width: thin;
-  scrollbar-color: black;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
   position: relative;
   overflow: auto;
   overflow-x: hidden;
@@ -48,6 +48,9 @@ ul {
 
 .project-list {
   overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #d9d9d9 #f6f6f7;
+  padding-right: 15px;
 }
 
 nav {
@@ -94,6 +97,7 @@ li {
   padding-top: 20px;
   justify-content: space-between;
   overflow: auto;
+  flex: 1 1 auto;
 }
 
 .project-container {
@@ -181,9 +185,6 @@ img {
   padding: 8px;
   border-radius: 0 0 12px 12px;
   border-top: 3px solid black;
-  position: sticky;
-  bottom: 0;
-  left: 0;
   width: 100%;
   z-index: 10;
 }
@@ -227,6 +228,21 @@ img {
 
 .planned {
   background-color: #eaeaea;
+}
+
+.no-projects {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.starting-message {
+  font-size: 20px;
+  text-align: center;
+  width: 500px;
+  font-weight: 600;
+  font-style: italic;
+  color: black;
 }
 
 form {
@@ -281,7 +297,8 @@ form > button {
   resize: none;
 }
 
-.delete-project-btn {
+.delete-project-btn,
+.edit-status-btn {
   display: flex;
   justify-content: center;
   align-items: center;
