@@ -116,7 +116,7 @@ function renderProjects() {
             projectNotesInput.value
           );
           renderProjects();
-          console.log(projects)
+          console.log(projects);
         });
       });
     });

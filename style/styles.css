@@ -141,6 +141,7 @@ li {
   border-radius: 100px;
   margin-bottom: 10px;
   justify-self: end;
+  cursor: pointer;
 }
 
 .project-name {

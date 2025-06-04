@@ -49,13 +49,13 @@ export function renderProjectsList(projects) {
                     </div>
                   </div>
                   <div class="project-buttons js-project-buttons-${project.projectId}">
-                    <div class="hide save-btn js-save-btn js-save-btn-${project.projectId}" data-project-id="${
+                    <div title="click to save changes" class="hide save-btn js-save-btn js-save-btn-${project.projectId}" data-project-id="${
                       project.projectId
                     }"><i class='bx bx-save'></i></div>
-                    <div class="edit-status-btn js-edit-status-btn" data-project-id="${
+                    <div title="click to edit details" class="edit-status-btn js-edit-status-btn" data-project-id="${
                       project.projectId
                     }"><i class='bx  bx-edit-alt'></i> </div>
-                    <div class="delete-project-btn js-delete-project-btn" data-project-id="${
+                    <div title="click to remove project" class="delete-project-btn js-delete-project-btn" data-project-id="${
                       project.projectId
                     }">
                     <i class='bx  bx-trash-x'></i> 
