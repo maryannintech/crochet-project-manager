@@ -38,7 +38,7 @@ ul {
 .main-module {
   border: 3px solid black;
   border-radius: 12px;
-  width: 780px;
+  width: 850px;
   background-color: #f6f6f7;
   height: 500px;
   display: flex;
@@ -95,7 +95,7 @@ li {
   display: flex;
   padding-bottom: 10px;
   padding-left: 30px;
-  padding-right: 18px;
+  padding-right: 30px;
   padding-top: 20px;
   justify-content: space-between;
   overflow: auto;
@@ -313,7 +313,8 @@ form > button {
 }
 
 .bx-trash-x,
-.bx-edit-alt {
+.bx-edit-alt,
+.bx-save {
   font-size: 25px;
   color: black;
   padding-top: 2px;
@@ -332,4 +333,15 @@ form > button {
   font-weight: 600;
   font-style: italic;
   color: black;
+}
+
+.edit-input {
+  font-size: 18px;
+  border-radius: 10px;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+textarea {
+  resize: none
 }

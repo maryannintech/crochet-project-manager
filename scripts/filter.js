@@ -16,10 +16,16 @@ export function renderProjectsList(projects) {
                       <p class="project-name">${capitalizeFirstLetter(
                         project.projectName
                       )}</p>
+                      <input type="text" class="edit-input js-edit-project-name-${project.projectId}" value="${capitalizeFirstLetter(project.projectName)}">
                       <p class="project-status"><span class="status-icon ${
                         project.status
-                      }"></span>${capitalizeFirstLetter(project.status)} </p> 
+                      }"></span>${capitalizeFirstLetter(project.status)} </p>
+                      <select class="edit-input js-edit-project-status-${project.projectId}">
+                        <option ${project.status === "planned" ? "selected" : ""} value="not-started">Planned</option>
+                        <option ${project.status === "ongoing" ? "selected" : ""} value="in-progress">Ongoing</option>
+                        </select>
                       <p class="project-due-date">Due: ${project.dueDate}</p>
+                      <input type="date" class="edit-input js-edit-project-duedate-${project.projectId}" value="${project.dueDate}"> 
                     </div>
                   </div>
                   <div class="project-buttons">
@@ -40,6 +46,7 @@ export function renderProjectsList(projects) {
                       : "No notes added"
                   }
                 </p>
+                <textarea class="edit-input js-edit-project-notes-${project.projectId}" placeholder="Enter any notes about the project" style="margin-left: 20px; width: 80%">${project.notes || ""}</textarea>
                 <div class="bottom-border"></div>
               </div>
     `;
