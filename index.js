@@ -63,16 +63,6 @@ function renderProjects() {
 
   document.querySelector(".js-project-list").innerHTML = projectListHTML;
 
-  document.querySelectorAll(".js-delete-project-btn").forEach((button) => {
-    button.addEventListener("click", () => {
-      const projectId = button.dataset.projectId;
-      removeProject(projectId);
-      renderProjects();
-
-      displayFeedbackMessage(`Project removed successfully!`);
-    });
-  });
-
   document
     .querySelector(".js-planned-filter-btn")
     .addEventListener("click", () => {
@@ -122,6 +112,15 @@ function displayFeedbackMessage(message) {
 }
 
 function projectButtonsFunctions() {
+  document.querySelectorAll(".js-delete-project-btn").forEach((button) => {
+    button.addEventListener("click", () => {
+      const projectId = button.dataset.projectId;
+      removeProject(projectId);
+      renderProjects();
+
+      displayFeedbackMessage(`Project removed successfully!`);
+    });
+  });
   document.querySelectorAll(".js-edit-status-btn").forEach((button) => {
     button.addEventListener("click", () => {
       const projectId = button.dataset.projectId;
