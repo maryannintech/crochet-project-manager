@@ -87,53 +87,7 @@ function renderProjects() {
       ).innerHTML = `(${plannedFilter.length})`;
       document.querySelector(".js-project-list").innerHTML =
         renderProjectsList(plannedFilter);
-      document.querySelectorAll(".js-edit-status-btn").forEach((button) => {
-        button.addEventListener("click", () => {
-          const projectId = button.dataset.projectId;
-          document
-            .querySelectorAll(`.js-edit-input-${projectId}`)
-            .forEach((inputElement) => {
-              inputElement.classList.toggle("hide");
-            });
-          document
-            .querySelectorAll(`.js-project-detail-${projectId}`)
-            .forEach((element) => {
-              element.classList.toggle("hide");
-            });
-
-          document
-            .querySelectorAll(`.js-save-btn-${projectId}`)
-            .forEach((saveButton) => {
-              saveButton.classList.toggle("hide");
-            });
-
-          document.querySelectorAll(".js-save-btn").forEach((button) => {
-            button.addEventListener("click", () => {
-              const projectNameInput = document.querySelector(
-                `.js-edit-project-name-${projectId}`
-              );
-              const projectStatusInput = document.querySelector(
-                `.js-edit-project-status-${projectId}`
-              );
-              const projectDueDateInput = document.querySelector(
-                `.js-edit-project-duedate-${projectId}`
-              );
-              const projectNotesInput = document.querySelector(
-                `.js-edit-project-notes-${projectId}`
-              );
-              updateProject(
-                projectId,
-                projectNameInput.value,
-                projectStatusInput.value,
-                projectDueDateInput.value,
-                projectNotesInput.value
-              );
-              renderProjects();
-              console.log(projects);
-            });
-          });
-        });
-      });
+      projectButtonsFunctions();
     });
 
   document
@@ -150,62 +104,24 @@ function renderProjects() {
       ).innerHTML = `(${ongoingFilter.length})`;
       document.querySelector(".js-project-list").innerHTML =
         renderProjectsList(ongoingFilter);
-      document.querySelectorAll(".js-edit-status-btn").forEach((button) => {
-        button.addEventListener("click", () => {
-          const projectId = button.dataset.projectId;
-
-          document
-            .querySelectorAll(`.js-edit-input-${projectId}`)
-            .forEach((inputElement) => {
-              inputElement.classList.toggle("hide");
-            });
-          document
-            .querySelectorAll(`.js-project-detail-${projectId}`)
-            .forEach((element) => {
-              element.classList.toggle("hide");
-            });
-
-          document
-            .querySelectorAll(`.js-save-btn-${projectId}`)
-            .forEach((saveButton) => {
-              saveButton.classList.toggle("hide");
-            });
-
-          document.querySelectorAll(".js-save-btn").forEach((button) => {
-            button.addEventListener("click", () => {
-              const projectNameInput = document.querySelector(
-                `.js-edit-project-name-${projectId}`
-              );
-              const projectStatusInput = document.querySelector(
-                `.js-edit-project-status-${projectId}`
-              );
-              const projectDueDateInput = document.querySelector(
-                `.js-edit-project-duedate-${projectId}`
-              );
-              const projectNotesInput = document.querySelector(
-                `.js-edit-project-notes-${projectId}`
-              );
-              updateProject(
-                projectId,
-                projectNameInput.value,
-                projectStatusInput.value,
-                projectDueDateInput.value,
-                projectNotesInput.value
-              );
-              renderProjects();
-              console.log(projects);
-
-              displayFeedbackMessage(`Project updated successfully!`);
-            });
-          });
-        });
-      });
+      projectButtonsFunctions();
     });
-
   document.querySelector(".js-all-filter-btn").addEventListener("click", () => {
     renderProjects();
   });
+  projectButtonsFunctions();
+}
 
+function displayFeedbackMessage(message) {
+  const bottomMessageElement = document.querySelector(".js-added-message");
+  bottomMessageElement.classList.remove("hide");
+  bottomMessageElement.innerHTML = `${message}`;
+  setTimeout(() => {
+    bottomMessageElement.classList.add("hide");
+  }, 2000);
+}
+
+function projectButtonsFunctions() {
   document.querySelectorAll(".js-edit-status-btn").forEach((button) => {
     button.addEventListener("click", () => {
       const projectId = button.dataset.projectId;
@@ -256,13 +172,3 @@ function renderProjects() {
     });
   });
 }
-
-function displayFeedbackMessage(message) {
-  const bottomMessageElement = document.querySelector(".js-added-message");
-  bottomMessageElement.classList.remove("hide");
-  bottomMessageElement.innerHTML = `${message}`;
-  setTimeout(() => {
-    bottomMessageElement.classList.add("hide");
-  }, 2000);
-}
-
