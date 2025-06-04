@@ -16,16 +16,19 @@ todayElement.innerHTML = `today is ${dayjs()
   .toLowerCase()}`;
 
 const addProjectForm = document.querySelector(".js-form-add-project");
+const mainModuleHTML = document.querySelector(".js-main-module");
 document
   .querySelector(".js-add-project-button")
   .addEventListener("click", () => {
     addProjectForm.classList.toggle("hide");
+    mainModuleHTML.classList.toggle("hide");
   });
 
 document
   .querySelector(".js-cancel-project-btn")
   .addEventListener("click", () => {
     addProjectForm.classList.add("hide");
+    mainModuleHTML.classList.remove("hide");
   });
 
 addProjectForm.addEventListener("submit", (event) => {
@@ -43,6 +46,7 @@ addProjectForm.addEventListener("submit", (event) => {
   renderProjects();
   addProjectForm.reset();
   addProjectForm.classList.add("hide");
+  mainModuleHTML.classList.remove("hide");
 
   displayFeedbackMessage(
     `Project "${capitalizeFirstLetter(projectName)}" added successfully!`

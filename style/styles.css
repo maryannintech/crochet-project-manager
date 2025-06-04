@@ -24,7 +24,6 @@ body {
 }
 
 .date {
-  margin-bottom: 23px;
   font-size: 20px;
   font-weight: 600;
 }
@@ -46,6 +45,7 @@ ul {
   position: relative;
   overflow: auto;
   overflow-x: hidden;
+  margin-top: 10px;
 }
 
 .project-list {
@@ -264,7 +264,7 @@ form {
   padding: 20px;
   margin-left: auto; /* Add this */
   margin-right: auto; /* Add this */
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 form > h1 {
@@ -344,7 +344,7 @@ form > button {
 }
 
 textarea {
-  resize: none
+  resize: none;
 }
 
 .project-info {
