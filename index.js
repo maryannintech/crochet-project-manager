@@ -7,6 +7,7 @@ import {
 import dayjs from "https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js";
 import { renderProjectsList } from "./scripts/project-list.js";
 import { capitalizeFirstLetter } from "./utils/format-text.js";
+import { filterProjects } from "./scripts/filter.js";
 
 renderProjects();
 const todayElement = document.querySelector(".js-date");
@@ -43,7 +44,9 @@ addProjectForm.addEventListener("submit", (event) => {
   addProjectForm.reset();
   addProjectForm.classList.add("hide");
 
-  displayFeedbackMessage(`Project "${projectName}" added successfully!`);
+  displayFeedbackMessage(
+    `Project "${capitalizeFirstLetter(projectName)}" added successfully!`
+  );
 });
 
 function renderProjects() {
@@ -66,34 +69,14 @@ function renderProjects() {
   document
     .querySelector(".js-planned-filter-btn")
     .addEventListener("click", () => {
-      const plannedFilter = [];
-      projects.filter((project) => {
-        if (project.status === "planned") {
-          plannedFilter.push(project);
-        }
-      });
-      document.querySelector(
-        ".js-project-quantity"
-      ).innerHTML = `(${plannedFilter.length})`;
-      document.querySelector(".js-project-list").innerHTML =
-        renderProjectsList(plannedFilter);
+      filterProjects(projects, "planned");
       projectButtonsFunctions();
     });
 
   document
     .querySelector(".js-ongoing-filter-btn")
     .addEventListener("click", () => {
-      const ongoingFilter = [];
-      projects.filter((project) => {
-        if (project.status === "ongoing") {
-          ongoingFilter.push(project);
-        }
-      });
-      document.querySelector(
-        ".js-project-quantity"
-      ).innerHTML = `(${ongoingFilter.length})`;
-      document.querySelector(".js-project-list").innerHTML =
-        renderProjectsList(ongoingFilter);
+      filterProjects(projects, "ongoing");
       projectButtonsFunctions();
     });
   document.querySelector(".js-all-filter-btn").addEventListener("click", () => {
