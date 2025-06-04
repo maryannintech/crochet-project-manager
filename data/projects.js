@@ -26,6 +26,18 @@ export function addProject(projectName, status, dueDate, notes) {
   saveToStorage();
 }
 
+export function updateProject(projectId, projectName, status, dueDate, notes) {
+  projects.forEach((project) => {
+    if (project.projectId === projectId) {
+      project.projectName = projectName;
+      project.status = status;
+      project.dueDate = dueDate;
+      project.notes = notes;
+    }
+  });
+  saveToStorage();
+}
+
 function saveToStorage() {
   localStorage.setItem("projects", JSON.stringify(projects));
 }

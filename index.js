@@ -1,4 +1,9 @@
-import { projects, addProject, removeProject } from "./data/projects.js";
+import {
+  projects,
+  addProject,
+  removeProject,
+  updateProject,
+} from "./data/projects.js";
 import dayjs from "https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js";
 import { renderProjectsList } from "./scripts/filter.js";
 
@@ -82,6 +87,38 @@ function renderProjects() {
         .forEach((element) => {
           element.classList.toggle("hide");
         });
+
+      document
+        .querySelectorAll(`.js-save-btn-${projectId}`)
+        .forEach((saveButton) => {
+          saveButton.classList.toggle("hide");
+        });
+
+      document.querySelectorAll(".js-save-btn").forEach((button) => {
+        button.addEventListener("click", () => {
+          const projectNameInput = document.querySelector(
+            `.js-edit-project-name-${projectId}`
+          );
+          const projectStatusInput = document.querySelector(
+            `.js-edit-project-status-${projectId}`
+          );
+          const projectDueDateInput = document.querySelector(
+            `.js-edit-project-duedate-${projectId}`
+          );
+          const projectNotesInput = document.querySelector(
+            `.js-edit-project-notes-${projectId}`
+          );
+          updateProject(
+            projectId,
+            projectNameInput.value,
+            projectStatusInput.value,
+            projectDueDateInput.value,
+            projectNotesInput.value
+          );
+          renderProjects();
+          console.log(projects)
+        });
+      });
     });
   });
 

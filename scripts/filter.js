@@ -13,22 +13,45 @@ export function renderProjectsList(projects) {
                       <img src="images/yarn-ball.png" class="project-image" />
                     </div>
                     <div class="project-details">
-                      <p class="js-project-detail-${project.projectId} project-name">${capitalizeFirstLetter(
-                        project.projectName
-                      )}</p>
-                      <input type="text" class="hide js-edit-input-${project.projectId} edit-input js-edit-project-name-${project.projectId}" value="${capitalizeFirstLetter(project.projectName)}">
-                      <p class="project-status js-project-detail-${project.projectId}"><span class="status-icon ${
-                        project.status
-                      }"></span>${capitalizeFirstLetter(project.status)} </p>
-                      <select class="hide js-edit-input-${project.projectId} edit-input js-edit-project-status-${project.projectId}">
-                        <option ${project.status === "planned" ? "selected" : ""} value="not-started">Planned</option>
-                        <option ${project.status === "ongoing" ? "selected" : ""} value="in-progress">Ongoing</option>
+                      <p class="js-project-detail-${
+                        project.projectId
+                      } project-name">${capitalizeFirstLetter(
+      project.projectName
+    )}</p>
+                      <input type="text" class="hide js-edit-input-${
+                        project.projectId
+                      } edit-input js-edit-project-name-${
+      project.projectId
+    }" value="${capitalizeFirstLetter(project.projectName)}">
+                      <p class="project-status js-project-detail-${
+                        project.projectId
+                      }"><span class="status-icon ${
+      project.status
+    }"></span>${capitalizeFirstLetter(project.status)} </p>
+                      <select class="hide js-edit-input-${
+                        project.projectId
+                      } edit-input js-edit-project-status-${project.projectId}">
+                        <option ${
+                          project.status === "planned" ? "selected" : ""
+                        } value="planned">Planned</option>
+                        <option ${
+                          project.status === "ongoing" ? "selected" : ""
+                        } value="ongoing">Ongoing</option>
                         </select>
-                      <p class="project-due-date js-project-detail-${project.projectId}">Due: ${project.dueDate}</p>
-                      <input type="date" class="hide edit-input js-edit-input-${project.projectId} js-edit-project-duedate-${project.projectId}" value="${project.dueDate}"> 
+                      <p class="project-due-date js-project-detail-${
+                        project.projectId
+                      }">Due: ${project.dueDate}</p>
+                      <input type="date" class="hide edit-input js-edit-input-${
+                        project.projectId
+                      } js-edit-project-duedate-${project.projectId}" value="${
+      project.dueDate
+    }"> 
                     </div>
                   </div>
-                  <div class="project-buttons">
+                  <div class="project-buttons js-project-buttons-${project.projectId}">
+                    <div class="hide save-btn js-save-btn js-save-btn-${project.projectId}" data-project-id="${
+                      project.projectId
+                    }"><i class='bx bx-save'></i></div>
                     <div class="edit-status-btn js-edit-status-btn" data-project-id="${
                       project.projectId
                     }"><i class='bx  bx-edit-alt'></i> </div>
@@ -46,7 +69,13 @@ export function renderProjectsList(projects) {
                       : "No notes added"
                   }
                 </p>
-                <textarea class="hide js-edit-input-${project.projectId} edit-input js-edit-project-notes-${project.projectId}" placeholder="Enter any notes about the project" style="margin-left: 20px; width: 50%">${project.notes || ""}</textarea>
+                <textarea class="hide js-edit-input-${
+                  project.projectId
+                } edit-input js-edit-project-notes-${
+      project.projectId
+    }" placeholder="Enter any notes about the project" style="margin-left: 20px; width: 50%">${
+      project.notes || ""
+    }</textarea>
                 <div class="bottom-border"></div>
               </div>
     `;
