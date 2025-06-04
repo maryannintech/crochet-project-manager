@@ -15,8 +15,7 @@ body {
   margin: 0;
 }
 
-
-.title{
+.title {
   font-size: 23px;
   font-style: italic;
   font-weight: 600;
@@ -179,7 +178,6 @@ img {
   border: 3px solid black;
   border-radius: 10px;
   padding: 10px 30px;
-  margin-bottom: 40px;
   cursor: pointer;
   background-color: #eaeaea;
 }
@@ -191,6 +189,10 @@ img {
   border-top: 3px solid black;
   width: 100%;
   z-index: 10;
+}
+
+.filter-buttons > p {
+  margin-top: 40px;
 }
 
 .filter-buttons > p {
@@ -315,4 +317,19 @@ form > button {
   font-size: 25px;
   color: black;
   padding-top: 2px;
+}
+
+.added-project-message-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.added-message {
+  font-size: 20px;
+  margin-top: 10px;
+  font-weight: 600;
+  font-style: italic;
+  color: black;
 }

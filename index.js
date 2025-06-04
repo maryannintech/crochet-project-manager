@@ -1,5 +1,4 @@
 import { projects, addProject, removeProject } from "./data/projects.js";
-import { capitalizeFirstLetter } from "./utils/format-text.js";
 import dayjs from "https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js";
 import { renderProjectsList } from "./scripts/filter.js";
 
@@ -34,7 +33,11 @@ addProjectForm.addEventListener("submit", (event) => {
   const projectNotes = document.querySelector(".js-project-notes-input").value;
 
   addProject(projectName, projectStatus, projectDueDate, projectNotes);
+  document.querySelector(".js-added-message").classList.remove("hide");
 
+  setTimeout(() => {
+    document.querySelector(".js-added-message").classList.add("hide");
+  }, 2000);
   addProjectForm.reset();
   renderProjects();
 });
@@ -80,6 +83,9 @@ function renderProjects() {
           plannedFilter.push(project);
         }
       });
+      document.querySelector(
+        ".js-project-quantity"
+      ).innerHTML = `(${plannedFilter.length})`;
       document.querySelector(".js-project-list").innerHTML =
         renderProjectsList(plannedFilter);
       console.log(plannedFilter);
@@ -94,6 +100,9 @@ function renderProjects() {
           ongoingFilter.push(project);
         }
       });
+      document.querySelector(
+        ".js-project-quantity"
+      ).innerHTML = `(${ongoingFilter.length})`;
       document.querySelector(".js-project-list").innerHTML =
         renderProjectsList(ongoingFilter);
       console.log(ongoingFilter);
