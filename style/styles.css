@@ -38,9 +38,9 @@ ul {
 .main-module {
   border: 3px solid black;
   border-radius: 12px;
-  width: 850px;
+  width: 800px;
   background-color: #f6f6f7;
-  height: 500px;
+  height: 530px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -106,6 +106,7 @@ li {
   border: 3px solid black;
   border-radius: 12px;
   margin-bottom: 20px;
+  width: 500px;
 }
 
 .project-content {
@@ -344,4 +345,8 @@ form > button {
 
 textarea {
   resize: none
+}
+
+.project-info {
+  display: none;
 }

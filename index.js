@@ -72,7 +72,16 @@ function renderProjects() {
   document.querySelectorAll(".js-edit-status-btn").forEach((button) => {
     button.addEventListener("click", () => {
       const projectId = button.dataset.projectId;
-      
+      document
+        .querySelectorAll(`.js-edit-input-${projectId}`)
+        .forEach((inputElement) => {
+          inputElement.classList.toggle("hide");
+        });
+      document
+        .querySelectorAll(`.js-project-detail-${projectId}`)
+        .forEach((element) => {
+          element.classList.toggle("hide");
+        });
     });
   });
 
