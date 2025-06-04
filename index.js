@@ -1,6 +1,7 @@
 import { projects, addProject, removeProject } from "./data/projects.js";
 import { capitalizeFirstLetter } from "./utils/format-text.js";
 import dayjs from "https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js";
+import { renderProjectsList } from "./scripts/filter.js";
 
 renderProjects();
 const todayElement = document.querySelector(".js-date");
@@ -51,49 +52,7 @@ function renderProjects() {
     noProjectMessage.classList.add("hide");
   }
 
-  let projectListHTML = "";
-
-  projects.forEach((project) => {
-    projectListHTML += `<div class="project-container" data-project-id="${
-      project.projectId
-    }">
-            <div class="project-content">
-              <div class="proj-img-and-details">
-                <div class="project-image">
-                  <img src="images/yarn-ball.png" class="project-image" />
-                </div>
-                <div class="project-details">
-                  <p class="project-name">${capitalizeFirstLetter(
-                    project.projectName
-                  )}</p>
-                  <p class="project-status"><span class="status-icon ${
-                    project.status
-                  }"></span>${capitalizeFirstLetter(project.status)} </p> 
-                  <p class="project-due-date">Due: ${project.dueDate}</p>
-                </div>
-              </div>
-              <div class="project-buttons">
-                <div class="edit-status-btn js-edit-status-btn" data-project-id="${
-                  project.projectId
-                }"><i class='bx  bx-edit-alt'></i> </div>
-                <div class="delete-project-btn js-delete-project-btn" data-project-id="${
-                  project.projectId
-                }">
-                <i class='bx  bx-trash-x'></i> 
-                </div>
-              </div>
-            </div>
-            <p class="project-notes">
-              Notes: ${
-                project.notes
-                  ? capitalizeFirstLetter(project.notes)
-                  : "No notes added"
-              }
-            </p>
-            <div class="bottom-border"></div>
-          </div>
-`;
-  });
+  let projectListHTML = renderProjectsList(projects);
 
   document.querySelector(".js-project-list").innerHTML = projectListHTML;
 
@@ -121,6 +80,8 @@ function renderProjects() {
           plannedFilter.push(project);
         }
       });
+      document.querySelector(".js-project-list").innerHTML =
+        renderProjectsList(plannedFilter);
       console.log(plannedFilter);
     });
 
@@ -133,6 +94,8 @@ function renderProjects() {
           ongoingFilter.push(project);
         }
       });
+      document.querySelector(".js-project-list").innerHTML =
+        renderProjectsList(ongoingFilter);
       console.log(ongoingFilter);
     });
 
