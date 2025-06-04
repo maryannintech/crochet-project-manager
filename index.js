@@ -38,8 +38,10 @@ addProjectForm.addEventListener("submit", (event) => {
   setTimeout(() => {
     document.querySelector(".js-added-message").classList.add("hide");
   }, 2000);
-  addProjectForm.reset();
+
   renderProjects();
+  addProjectForm.reset();
+  addProjectForm.classList.add("hide");
 });
 
 function renderProjects() {
