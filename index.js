@@ -4,16 +4,21 @@ import {
   removeProject,
   updateProject,
 } from "./data/projects.js";
-import dayjs from "https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js";
+
 import { renderProjectsList } from "./scripts/project-list.js";
 import { capitalizeFirstLetter } from "./utils/format-text.js";
 import { filterProjects } from "./scripts/filter.js";
+import { updateDateTime } from "./utils/time.js";
 
 renderProjects();
+
 const todayElement = document.querySelector(".js-date");
-todayElement.innerHTML = `today is ${dayjs()
-  .format("MMMM D, YYYY")
-  .toLowerCase()}`;
+
+function updateTime() {
+  todayElement.innerHTML = updateDateTime();
+}
+updateTime();
+setInterval(updateTime, 1000);
 
 const addProjectForm = document.querySelector(".js-form-add-project");
 const mainModuleHTML = document.querySelector(".js-main-module");
