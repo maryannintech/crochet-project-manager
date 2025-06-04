@@ -5,9 +5,9 @@ import {
   updateProject,
 } from "./data/projects.js";
 
-import { renderProjectsList } from "./scripts/project-list.js";
+import { renderProjectsList } from "./scripts/my-project-section/project-list.js";
 import { capitalizeFirstLetter } from "./utils/format-text.js";
-import { filterProjects } from "./scripts/filter.js";
+import { filterProjects } from "./scripts/my-project-section/filter.js";
 import { updateDateTime } from "./utils/time.js";
 
 renderProjects();

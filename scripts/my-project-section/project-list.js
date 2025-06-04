@@ -1,4 +1,4 @@
-import { capitalizeFirstLetter } from "../utils/format-text.js";
+import { capitalizeFirstLetter } from "../../utils/format-text.js";
 
 export function renderProjectsList(projects) {
   let projectsListHTML = "";
