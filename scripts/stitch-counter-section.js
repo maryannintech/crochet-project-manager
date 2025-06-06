@@ -44,7 +44,6 @@ export function renderAfterSettingStitch() {
   document.querySelector(".js-stitch-counter-input").value = "";
   document.querySelector(".js-stitch-counter-input").classList.add("hide");
   document.querySelector(".js-set-counter-btn").classList.add("hide");
-  document.querySelector(".js-saved-stitch").innerHTML = `${stitches}`;
   document.querySelector(".js-current-stitch").innerHTML = `${currentStitch} /`;
   stitchCounterButtonFunctions();
 }
