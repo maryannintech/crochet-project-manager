@@ -9,11 +9,6 @@ export function setStitch(value) {
   saveCounterToLocalStorage("stitchCounter", stitches);
 }
 
-export function setCurrentStitch(value) {
-  currentStitch = value;
-  saveCounterToLocalStorage("currentStitch", currentStitch);
-}
-
 function saveCounterToLocalStorage(key, value) {
   localStorage.setItem(key, JSON.stringify(value));
 }
@@ -33,7 +28,7 @@ export function resetStitchCounter() {
 
 export function increaseCurrentStitch() {
   if (currentStitch >= stitches) {
-    return; 
+    return;
   } else {
     currentStitch++;
     saveCounterToLocalStorage("currentStitch", currentStitch);
