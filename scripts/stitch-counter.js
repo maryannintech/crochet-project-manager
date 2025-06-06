@@ -14,7 +14,7 @@ import {
 
 renderCounter();
 
-function renderCounter() {
+export function renderCounter() {
   const stitchCounterSectionHTML = document.querySelector(".js-stitch-counter");
   stitchCounterSectionHTML.innerHTML = renderStitchCounter();
   let inputStitch = document.querySelector(".js-stitch-counter-input");
@@ -45,7 +45,7 @@ function renderCounter() {
     }
   });
 }
-const currentStitchElement = document.querySelector(".js-current-stitch");
+
 export function stitchCounterButtonFunctions() {
   document.querySelector(".js-increase-btn").addEventListener("click", () => {
     increaseCurrentStitch();
@@ -75,5 +75,6 @@ document.addEventListener("keydown", (event) => {
 });
 
 function setCurrentStitch() {
+  const currentStitchElement = document.querySelector(".js-current-stitch");
   currentStitchElement.innerHTML = `${currentStitch} /`;
 }
