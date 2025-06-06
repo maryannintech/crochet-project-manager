@@ -1,4 +1,4 @@
-import { stitches } from "../data/counter.js";
+import { stitches, currentStitch } from "../data/counter.js";
 import { stitchCounterButtonFunctions } from "./stitch-counter.js";
 
 export function renderStitchCounter() {
@@ -8,7 +8,7 @@ export function renderStitchCounter() {
         </p>
         <div class="counter js-counter">
           <div class="user-counter-input">
-            <p class="right-counter js-right-counter">0 /</p>
+            <p class="right-counter js-current-stitch">0 /</p>
             <input
               type="number"
               class="stitch-counter-input js-stitch-counter-input"
@@ -34,7 +34,8 @@ export function renderStitchCounterButtons() {
 }
 
 export function renderAfterSettingStitch() {
-  document.querySelector(".js-stitch-counter-message").classList.add("hide");
+  const infoMessage = document.querySelector(".js-stitch-counter-message");
+  infoMessage.classList.add("hide");
   document.querySelector(".js-saved-stitch").innerHTML = stitches;
   document.querySelector(".js-stitch-counter-input").classList.add("hide");
   document.querySelector(".js-counter-buttons").innerHTML =
@@ -43,4 +44,6 @@ export function renderAfterSettingStitch() {
   document.querySelector(".js-stitch-counter-input").classList.add("hide");
   document.querySelector(".js-set-counter-btn").classList.add("hide");
   document.querySelector(".js-saved-stitch").innerHTML = `${stitches}`;
+   document.querySelector(".js-current-stitch").innerHTML = `${currentStitch} /`;
+  stitchCounterButtonFunctions();
 }
