@@ -11,6 +11,7 @@ export function renderStitchCounter() {
             <p class="right-counter js-current-stitch">0 /</p>
             <input
               type="number"
+              placeholder="0"
               class="stitch-counter-input js-stitch-counter-input"
             />
             <p class="right-counter set-counter js-saved-stitch"></p>
@@ -35,7 +36,7 @@ export function renderStitchCounterButtons() {
 
 export function renderAfterSettingStitch() {
   const infoMessage = document.querySelector(".js-stitch-counter-message");
-  infoMessage.classList.add("hide");
+  infoMessage.innerHTML = "happy crocheting!";
   document.querySelector(".js-saved-stitch").innerHTML = stitches;
   document.querySelector(".js-stitch-counter-input").classList.add("hide");
   document.querySelector(".js-counter-buttons").innerHTML =
@@ -44,6 +45,6 @@ export function renderAfterSettingStitch() {
   document.querySelector(".js-stitch-counter-input").classList.add("hide");
   document.querySelector(".js-set-counter-btn").classList.add("hide");
   document.querySelector(".js-saved-stitch").innerHTML = `${stitches}`;
-   document.querySelector(".js-current-stitch").innerHTML = `${currentStitch} /`;
+  document.querySelector(".js-current-stitch").innerHTML = `${currentStitch} /`;
   stitchCounterButtonFunctions();
 }

@@ -22,7 +22,7 @@ export function renderCounter() {
   const savedStitch = document.querySelector(".js-saved-stitch");
 
   if (stitches && stitches !== 0) {
-    infoMessage.classList.add("hide");
+    infoMessage.classList.innerHTML = "happy crocheting!";
     renderAfterSettingStitch();
   }
 
@@ -35,6 +35,7 @@ export function renderCounter() {
       }, 2000);
     } else {
       setStitch(inputStitch.value);
+      renderAfterSettingStitch();
       savedStitch.innerHTML = stitches;
       inputStitch.value = "";
       inputStitch.classList.add("hide");
