@@ -3,19 +3,14 @@ import {
   addProject,
   removeProject,
   updateProject,
-} from "./data/projects.js";
+} from "../data/projects.js";
 
-import { renderProjectsList } from "./scripts/my-project-section/project-list.js";
-import { capitalizeFirstLetter } from "./utils/format-text.js";
-import { filterProjects } from "./scripts/my-project-section/filter.js";
-import { updateDateTime } from "./utils/time.js";
-import { controlNavBar } from "./scripts/nav.js";
-import { controlStitchCounter } from "./scripts/stitch-counter.js";
-
+import { renderProjectsList } from "../scripts/my-project-section/project-list.js";
+import { capitalizeFirstLetter } from "../utils/format-text.js";
+import { filterProjects } from "../scripts/my-project-section/filter.js";
+import { updateDateTime } from "../utils/time.js";
 
 renderProjects();
-controlNavBar();
-controlStitchCounter();
 
 const todayElement = document.querySelector(".js-date");
 
@@ -63,7 +58,7 @@ addProjectForm.addEventListener("submit", (event) => {
   );
 });
 
-function renderProjects() {
+export function renderProjects() {
   document.querySelector(
     ".js-project-quantity"
   ).innerHTML = `(${projects.length})`;
