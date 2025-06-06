@@ -402,10 +402,9 @@ textarea {
 }
 
 .stitch-counter-message {
-  font-size: 23px;
+  font-size: 28px;
   font-style: italic;
   text-align: center;
-  margin-top: 5px;
 }
 
 .stitch-submit-btn {
