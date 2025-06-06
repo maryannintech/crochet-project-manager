@@ -22,11 +22,11 @@
     <main class="main-module js-main-module">
       <nav>
         <ul>
-          <li class="isSelected">
+          <li class="js-project-link isNotSelected">
             <span class="js-project-quantity"></span> My Projects
           </li>
-          <li class="isNotSelected">Stitch Counter</li>
-          <li class="isNotSelected">About</li>
+          <li class="isNotSelected js-stitch-counter-link isSelected stitchCounterSelected">Stitch Counter</li>
+          <li class="isNotSelected js-about-link">About</li>
         </ul>
       </nav>
       <div class="no-projects js-no-projects-message">
@@ -37,8 +37,8 @@
       </div>
 
       <div class="section-container js-section-container">
-        <div class="project-list js-project-list"></div>
-        <aside>
+        <div class="project-list js-project-list hide"></div>
+        <aside class="js-project-aside hide">
           <button class="add-project-button js-add-project-button">
             + Add Project
           </button>
@@ -50,6 +50,7 @@
           </div>
         </aside>
       </div>
+
       <div class="bottom-design"></div>
     </main>
     <div class="added-project-message-container">
