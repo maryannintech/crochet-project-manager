@@ -105,7 +105,7 @@ li {
   border-left: 3px solid black;
 }
 
-.section-container {
+.project-section-container {
   display: flex;
   padding-bottom: 10px;
   padding-left: 30px;
@@ -363,4 +363,73 @@ textarea {
 
 .project-info {
   display: none;
+}
+
+/* SITCH COUNTER STYLES */
+
+.counter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-counter-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.stitch-counter-input {
+  font-size: 150px;
+  width: 150px;
+  text-align: center;
+  border-radius: 10px;
+  border: 2px solid black;
+}
+
+.right-counter {
+  font-size: 180px;
+}
+
+.js-stitch-counter-message {
+  font-size: 23px;
+  font-style: italic;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.stitch-submit-btn {
+  display: block;
+}
+
+.set-counter-btn {
+  font-size: 20px;
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #eaeaea;
+  margin: 20px 0;
+  width: 30%;
+}
+
+.counter-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding-bottom: 10px;
+}
+
+.counter-buttons > button {
+  font-size: 20px;
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #eaeaea;
+  margin: 20px 0;
+  width: 200px;
 }

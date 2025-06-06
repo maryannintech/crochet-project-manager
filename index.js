@@ -10,6 +10,7 @@ import { capitalizeFirstLetter } from "./utils/format-text.js";
 import { filterProjects } from "./scripts/my-project-section/filter.js";
 import { updateDateTime } from "./utils/time.js";
 import { controlNavBar } from "./scripts/nav.js";
+import "./scripts/stitch-counter.js";
 
 
 renderProjects();
