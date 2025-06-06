@@ -35,7 +35,6 @@ function renderCounter() {
       }, 2000);
     } else {
       setStitch(inputStitch.value);
-      console.log(stitches);
       savedStitch.innerHTML = stitches;
       inputStitch.value = "";
       inputStitch.classList.add("hide");
