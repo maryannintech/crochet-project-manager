@@ -1,17 +1,16 @@
-export let stitchCounter = JSON.parse(localStorage.getItem("stitchCounter"));
-checkCounterValue(stitchCounter);
+export let stitches = JSON.parse(localStorage.getItem("stitchCounter"));
+checkCounterValue(stitches);
 
 export let currentStitch = JSON.parse(localStorage.getItem("currentStitch"));
 checkCounterValue(currentStitch);
 
-export function setStitchCounter(value) {
-  stitchCounter = value;
-  saveCounterToLocalStorage("stitchCounter");
-  console.log(stitchCounter);
+export function setStitch(value) {
+  stitches = value;
+  saveCounterToLocalStorage("stitchCounter", stitches);
 }
 
-function saveCounterToLocalStorage(value) {
-  localStorage.setItem(value, JSON.stringify(stitchCounter));
+function saveCounterToLocalStorage(key, value) {
+  localStorage.setItem(key, JSON.stringify(value));
 }
 
 function checkCounterValue(stitch) {
@@ -21,7 +20,6 @@ function checkCounterValue(stitch) {
 }
 
 export function resetStitchCounter() {
-  stitchCounter = 0;
-  saveCounterToLocalStorage("stitchCounter");
-  saveCounterToLocalStorage("currentStitch");
+  stitches = 0;
+  saveCounterToLocalStorage("stitchCounter", stitches);
 }

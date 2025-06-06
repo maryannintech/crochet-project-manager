@@ -9,12 +9,10 @@ import { renderProjectsList } from "./scripts/my-project-section/project-list.js
 import { capitalizeFirstLetter } from "./utils/format-text.js";
 import { filterProjects } from "./scripts/my-project-section/filter.js";
 import { updateDateTime } from "./utils/time.js";
-import { controlNavBar } from "./scripts/nav.js";
 import "./scripts/stitch-counter.js";
 
 
 renderProjects();
-controlNavBar();
 
 const todayElement = document.querySelector(".js-date");
 
