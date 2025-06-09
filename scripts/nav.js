@@ -1,3 +1,6 @@
+import { renderProject } from "./project.js";
+import { renderCounter } from "./stitch-counter.js";
+
 export function controlNavBar() {
   const navBarElement = document.querySelector(".js-nav-bar");
   const myProjectLink = document.querySelector(".js-project-link");
@@ -5,5 +8,11 @@ export function controlNavBar() {
   const aboutLink = document.querySelector(".js-about-link");
   const sectionElement = document.querySelector(".js-section-container");
   const isSelectedNav = document.querySelector(".isSelected");
-  
+  const projectSection = document.querySelector(
+    ".js-project-section-container"
+  );
+
+  myProjectLink.addEventListener("click", () => {
+    
+  })
 }
