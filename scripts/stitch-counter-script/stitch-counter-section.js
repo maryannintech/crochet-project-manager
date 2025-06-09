@@ -1,5 +1,5 @@
-import { stitches, currentStitch } from "../data/counter.js";
-import { stitchCounterButtonFunctions } from "./stitch-counter.js";
+import { stitches, currentStitch } from "../../data/counter.js";
+import { stitchCounterButtonFunctions } from "../stitch-counter.js";
 
 export function renderStitchCounter() {
   let stitchCounterSectionHTML = `

@@ -5,7 +5,6 @@ import {
   setCurrentLocation,
 } from "../data/current-location.js";
 
-const activeSection = document.querySelector(".js-active-section");
 const myProjectLink = document.querySelector(".js-project-link");
 const stitchCounterLink = document.querySelector(".js-stitch-counter-link");
 const aboutLink = document.querySelector(".js-about-link");
@@ -14,16 +13,19 @@ const projectSection = document.querySelector(".js-project-section-container");
 const stitchCounterSection = document.querySelector(
   ".js-stitch-counter-section"
 );
-const navElement = document.querySelector(".nav-link");
+const aboutSection = document.querySelector(".js-about-section");
+
 isSelectedNav.classList.remove("isSelected");
 
 export function controlNavBar() {
   function setActive(section) {
     projectSection.classList.add("hide");
     stitchCounterSection.classList.add("hide");
+    aboutSection.classList.add("hide");
 
     myProjectLink.classList.remove("isSelected");
     stitchCounterLink.classList.remove("isSelected");
+    aboutLink.classList.remove("isSelected");
 
     if (section === "projects") {
       projectSection.classList.remove("hide");
@@ -35,6 +37,10 @@ export function controlNavBar() {
       stitchCounterLink.classList.add("isSelected");
       renderCounter();
       setCurrentLocation("stitch-counter");
+    } else if (section === "about") {
+      aboutSection.classList.remove("hide");
+      aboutLink.classList.add("isSelected");
+      setCurrentLocation("about");
     }
   }
 
@@ -49,6 +55,12 @@ export function controlNavBar() {
   stitchCounterLink.addEventListener("click", () => {
     if (currentLocation !== "stitch-counter") {
       setActive("stitch-counter");
+    }
+  });
+
+  aboutLink.addEventListener("click", () => {
+    if (currentLocation !== "about") {
+      setActive("about");
     }
   });
 }

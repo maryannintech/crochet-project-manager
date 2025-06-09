@@ -10,7 +10,7 @@ import {
   renderStitchCounter,
   renderStitchCounterButtons,
   renderAfterSettingStitch,
-} from "./stitch-counter-section.js";
+} from "./stitch-counter-script/stitch-counter-section.js";
 
 renderCounter();
 

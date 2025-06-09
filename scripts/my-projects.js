@@ -5,9 +5,9 @@ import {
   updateProject,
 } from "../data/projects.js";
 
-import { renderProjectsList } from "../scripts/my-project-section/project-list.js";
+import { renderProjectsList } from "./my-project-script/project-list.js";
 import { capitalizeFirstLetter } from "../utils/format-text.js";
-import { filterProjects } from "../scripts/my-project-section/filter.js";
+import { filterProjects } from "./my-project-script/filter.js";
 
 renderProjects();
 
