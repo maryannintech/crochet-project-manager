@@ -1,5 +1,6 @@
 import { renderProjects } from "./my-projects.js";
 import { renderCounter } from "./stitch-counter.js";
+import { renderAbout } from "./about.js";
 import {
   currentLocation,
   setCurrentLocation,
@@ -15,10 +16,10 @@ const stitchCounterSection = document.querySelector(
 );
 const aboutSection = document.querySelector(".js-about-section");
 
-isSelectedNav.classList.remove("isSelected");
-
 export function controlNavBar() {
+  setActive(currentLocation);
   function setActive(section) {
+    isSelectedNav.classList.remove("isSelected");
     projectSection.classList.add("hide");
     stitchCounterSection.classList.add("hide");
     aboutSection.classList.add("hide");
@@ -31,20 +32,18 @@ export function controlNavBar() {
       projectSection.classList.remove("hide");
       myProjectLink.classList.add("isSelected");
       renderProjects();
-      setCurrentLocation("projects");
     } else if (section === "stitch-counter") {
       stitchCounterSection.classList.remove("hide");
       stitchCounterLink.classList.add("isSelected");
       renderCounter();
-      setCurrentLocation("stitch-counter");
     } else if (section === "about") {
       aboutSection.classList.remove("hide");
       aboutLink.classList.add("isSelected");
-      setCurrentLocation("about");
+      renderAbout();
     }
-  }
 
-  setActive(currentLocation);
+    setCurrentLocation(section);
+  }
 
   myProjectLink.addEventListener("click", () => {
     if (currentLocation !== "projects") {
