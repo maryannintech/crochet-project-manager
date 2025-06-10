@@ -233,6 +233,10 @@ form > button {
   background-color: var(--secondary);
 }
 
+form > button:hover {
+  background-color: var(--accent);
+}
+
 .project-notes-input {
   margin-bottom: 10px;
   height: 80px;
