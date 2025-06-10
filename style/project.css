@@ -10,7 +10,7 @@
 }
 
 .project-container {
-  border: 3px solid black;
+  border: 3px solid var(--primary);
   border-radius: 12px;
   margin-bottom: 20px;
   width: 500px;
@@ -23,7 +23,7 @@
   padding-bottom: 0;
   padding-right: 15px;
   padding-left: 20px;
-  column-gap: 50px;
+  column-gap: 30px;
 }
 
 .proj-img-and-details {
@@ -39,9 +39,9 @@
 .project-buttons > div {
   font-size: 15px;
   border-radius: 50px;
-  background-color: #d9d9d9;
+  background-color: var(--secondary);
   text-align: center;
-  border: 2px solid black;
+  border: 2px solid var(--accent);
   width: 30px;
   height: 30px;
   padding: 5px;
@@ -51,6 +51,10 @@
   cursor: pointer;
 }
 
+.project-buttons > div:hover {
+  background-color: var(--accent);
+}
+
 .project-name {
   font-size: 25px;
   font-weight: 550;
@@ -58,18 +62,17 @@
 
 .project-status {
   font-size: 18px;
-  color: #626162;
 }
 
 img {
-  width: 80px;
+  width: 90px;
 }
 
 .bottom-border {
-  background-color: #d9d9d9;
+  background-color: var(--primary);
   border-radius: 0 0 12px 12px;
-  margin: 0;
-  padding: 7px;
+  padding: 5px;
+  border: 0px solid var(--primary);
 }
 
 .project-notes {
@@ -79,20 +82,15 @@ img {
 
 .add-project-button {
   font-size: 20px;
-  border: 3px solid black;
+  border: 3px solid var(--accent);
   border-radius: 10px;
   padding: 10px 30px;
   cursor: pointer;
-  background-color: #eaeaea;
+  background-color: var(--secondary);
 }
 
-.bottom-design {
-  background-color: #d9d9d9;
-  padding: 8px;
-  border-radius: 0 0 12px 12px;
-  border-top: 3px solid black;
-  width: 100%;
-  z-index: 10;
+.add-project-button:hover {
+  background-color: var(--accent);
 }
 
 .filter-buttons > p {
@@ -110,7 +108,6 @@ img {
 .filter-buttons > button {
   display: block;
   font-size: 18px;
-  border: 3px solid black;
   padding: 5px 0;
   width: 100%;
   margin-left: auto;
@@ -118,27 +115,50 @@ img {
   margin-bottom: 8px;
   border-radius: 10px;
   cursor: pointer;
-  background-color: #eaeaea;
+  background-color: var(--main-bg);
+}
+
+.all-btn {
+  border: 2px solid var(--primary);
+}
+
+.all-btn:hover {
+  background-color: var(--primary);
+  color: var(--main-bg);
+}
+
+.planned-btn {
+  border: 2px solid var(--accent);
+}
+
+.planned-btn:hover {
+  background-color: var(--secondary);
+}
+
+.ongoing-btn {
+  border: 2px solid var(--accent);
+}
+
+.ongoing-btn:hover {
+  background-color: var(--secondary);
 }
 
 .status-icon {
   padding: 5px;
-  background-color: #eaeaea;
   border-radius: 50%;
   width: 5px;
   height: 5px;
   display: inline-block;
   margin-right: 5px;
-  border: 2px solid black;
+  border: 2px solid var(--primary);
 }
 
 .ongoing {
-  background-color: #626162;
-  border: 2px solid black;
+  background-color: var(--accent);
 }
 
 .planned {
-  background-color: #eaeaea;
+  background-color: var(--secondary);
 }
 
 .no-projects {
@@ -160,6 +180,7 @@ img {
   display: block;
   font-weight: 600;
   font-size: 23px;
+  color: var(--primary);
 }
 
 .starting-message > span {
@@ -173,11 +194,12 @@ form {
   width: 300px;
   margin-bottom: 10px;
   border-radius: 15px;
-  border: 3px solid black;
+  border: 3px solid var(--accent);
   padding: 20px;
   margin-left: auto; /* Add this */
   margin-right: auto; /* Add this */
   margin-top: 10px;
+  background-color: var(--main-bg);
 }
 
 form > h1 {
@@ -188,12 +210,14 @@ form > input {
   font-size: 18px;
   border-radius: 10px;
   padding: 10px;
+  border-color: var(--primary);
 }
 
 form > select {
   font-size: 18px;
   border-radius: 10px;
   padding: 10px;
+  border-color: var(--primary);
 }
 
 form > label {
@@ -202,11 +226,11 @@ form > label {
 
 form > button {
   font-size: 18px;
-  border: 2px solid black;
+  border: 2px solid var(--accent);
   padding: 10px;
   border-radius: 10px;
   cursor: pointer;
-  background-color: #eaeaea;
+  background-color: var(--secondary);
 }
 
 .project-notes-input {
@@ -234,21 +258,6 @@ form > button {
   padding-top: 2px;
 }
 
-.added-project-message-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10px;
-}
-
-.added-message {
-  font-size: 20px;
-  margin-top: 10px;
-  font-weight: 600;
-  font-style: italic;
-  color: black;
-}
-
 .edit-input {
   font-size: 18px;
   border-radius: 10px;
@@ -258,6 +267,7 @@ form > button {
 
 textarea {
   resize: none;
+  border-color: var(--primary);
 }
 
 .project-info {

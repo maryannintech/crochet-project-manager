@@ -25,6 +25,7 @@ document
   .addEventListener("click", () => {
     addProjectForm.classList.add("hide");
     mainModuleHTML.classList.remove("hide");
+    addProjectForm.reset();
   });
 
 addProjectForm.addEventListener("submit", (event) => {
@@ -100,7 +101,6 @@ function projectButtonsFunctions() {
       const projectId = button.dataset.projectId;
       removeProject(projectId);
       renderProjects();
-
       displayFeedbackMessage(`Project removed successfully!`);
     });
   });

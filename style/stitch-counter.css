@@ -25,7 +25,7 @@
   width: 150px;
   text-align: center;
   border-radius: 10px;
-  border: 2px solid black;
+  border: 2px solid var(--primary);
 }
 
 .right-counter {
@@ -44,13 +44,17 @@
 
 .set-counter-btn {
   font-size: 20px;
-  border: 2px solid black;
+  border: 2px solid var(--accent);
   padding: 10px;
   border-radius: 10px;
   cursor: pointer;
-  background-color: #eaeaea;
+  background-color: var(--secondary);
   margin: 20px 0;
   width: 30%;
+}
+
+.set-counter-btn:hover {
+  background-color: var(--accent);
 }
 
 .counter-buttons {
@@ -63,11 +67,28 @@
 
 .counter-buttons > button {
   font-size: 20px;
-  border: 2px solid black;
   padding: 10px;
   border-radius: 10px;
   cursor: pointer;
-  background-color: #eaeaea;
   margin: 20px 0;
   width: 200px;
+}
+
+.counter-buttons > button:hover:not(.reset-btn) {
+  background-color: var(--accent);
+}
+
+.increase-btn,
+.decrease-btn {
+  border: 2px solid var(--accent);
+  background-color: var(--secondary);
+}
+
+.reset-btn {
+  border: 2px solid var(--primary);
+}
+
+.reset-btn:hover {
+  background-color: var(--primary);
+  color: white;
 }
