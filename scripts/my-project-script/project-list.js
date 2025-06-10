@@ -10,7 +10,7 @@ export function renderProjectsList(projects) {
                 <div class="project-content">
                   <div class="proj-img-and-details">
                     <div class="project-image">
-                      <img src="images/yarn-ball-default.png" class="project-image" />
+                      <img src="images/yarn-ball.png" class="project-image" />
                     </div>
                     <div class="project-details">
                       <p class="js-project-detail-${
