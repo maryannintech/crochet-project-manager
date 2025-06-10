@@ -1,0 +1,32 @@
+.about-section {
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+
+.about-image {
+  width: 300px;
+  height: 300px;
+  margin-top: 10px;
+  margin-left: 20px;
+  border: 3px solid black;
+  border-radius: 12px;
+  image-rendering: pixelated;
+  object-fit: cover;
+}
+
+.about-text {
+  width: 50%;
+  font-size: 20px;
+  margin-right: 20px;
+  margin-bottom: 100px;
+  text-align: justify;
+  padding-left: 20px;
+}
+
+.about-text > span {
+  font-weight: 600;
+  font-style: italic;
+}

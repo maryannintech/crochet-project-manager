@@ -1,0 +1,106 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background: #fff;
+}
+
+* {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  padding: 0;
+  margin: 0;
+}
+
+.title {
+  font-size: 23px;
+  font-style: italic;
+  font-weight: 600;
+  text-align: center;
+  color: black;
+}
+
+.date {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.main-module {
+  border: 3px solid black;
+  border-radius: 12px;
+  width: 800px;
+  background-color: #f6f6f7;
+  height: 530px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  overflow-x: hidden;
+  margin-top: 10px;
+}
+
+.project-list {
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #d9d9d9 #f6f6f7;
+  padding-right: 15px;
+}
+
+nav {
+  border: none;
+  border-radius: 12px 12px 0 0;
+  margin-bottom: 30px;
+}
+
+ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 12px 12px 0 0;
+}
+
+li {
+  flex: 1;
+  text-align: center;
+  cursor: pointer;
+  padding: 20px 0;
+  border-style: none;
+  font-size: 25px;
+  border-left: 3px solid black;
+}
+
+.isNotSelected {
+  border-bottom: 3px solid black;
+  background-color: #d9d9d9;
+  border-left: none;
+}
+
+.isSelected {
+  background-color: #f6f6f7;
+  border-bottom: none;
+}
+
+.stitchCounterSelected {
+  border-left: 3px solid black;
+  border-right: 3px solid black;
+}
+
+.aboutSelected {
+  border-left: 3px solid black;
+}
+
+.hide {
+  display: none;
+}
