@@ -1,5 +1,10 @@
 # 🧶 Crochet Project Manager
 
+## 🌐 Live Demo
+
+View the app on GitHub Pages: 
+[https://maryannintech.github.io/crochet-project-manager/](https://maryannintech.github.io/crochet-project-manager/)
+
 A simple web app to keep track of your crochet projects and stitches.
 
 ## 🌐 Live Demo
@@ -28,3 +33,7 @@ View the app on GitHub Pages:
 ## License
 
 MIT
+
+---
+
+**Made with ❤️ by a fellow crocheter!**
